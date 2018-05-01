@@ -1,0 +1,11 @@
+<h2>Welcome</h2>
+
+<div *ngIf="today?.note.length > 0" class="title">For today you have next events:</div>
+<div *ngIf="today?.note.length <= 0" class="title">For today you dont have any events :)</div>
+<mat-list>
+  <ol class="events">
+    <mat-nav-list *ngFor="let event of today?.note">
+      <li>{{event?.title}}</li>
+    </mat-nav-list>
+  </ol>
+</mat-list>

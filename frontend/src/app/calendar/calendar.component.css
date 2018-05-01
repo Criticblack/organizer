@@ -1,0 +1,39 @@
+.item{
+    /* background-color: aqua; */
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid #f0f0f0;
+}
+
+.header{
+    border-bottom:1px solid #f0f0f0;
+    margin-right: 10px;
+}
+.calendar-rows{
+    margin-bottom: 10px;
+}
+.calendar-header{
+    /* padding: 5px; */
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.calendar-header mat-card{
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 200px;
+    padding: 5px;
+}
+
+.divulet{
+    overflow: hidden;
+    margin-top: 25px;
+    max-width: 900px;
+}
+.disabled{
+    background-color: rgb(218, 218, 218);
+    border: 1px solid black;
+
+}
+

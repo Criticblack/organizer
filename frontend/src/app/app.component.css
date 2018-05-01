@@ -1,0 +1,41 @@
+.sidebar{
+    position: absolute; 
+    top: 65px;      
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+mat-sidenav{
+    width: 200px;
+}
+
+.main-toolbar{
+    position: fixed;
+    top: 0
+}
+
+.menu-item{
+    width: 190px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.menu-item i{
+    
+    font-size: 21px;
+}
+
+.menu-item:hover{
+    color: #7839B7;
+}
+
+#about-app-card{
+    padding: 15px;
+    font-size: 14px;
+}
+.active-link{
+    color: #7839B7;
+}
+  
+  

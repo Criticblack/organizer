@@ -1,0 +1,37 @@
+
+<div class="title" [ngClass]="{'today': today}" (click)="show()">
+<div> {{dateEvent.day}} <span class="day-name">{{dateEvent.dayName}}</span></div>
+<div class="events-badget" *ngIf="dateEvent.noEvents > 0">{{ dateEvent.noEvents }}</div>
+</div>
+<div id="background" class="background" (click)="toggle($event)" *ngIf="showT">
+    <mat-card [@dialog] class="content">
+      <span class="close" (click)="show()">&times;</span>
+      <h3>{{ dateEvent.dayName }} {{ dateEvent.day }} {{ dateEvent.month }}</h3>
+      <div class="events">
+        Events:
+        <mat-list class="menu-items" >
+          <ol>
+            <mat-nav-list *ngFor="let event of dateEvent.events">
+               <li [@itemAnim]> <app-cell-event (editedEvent)="updateEvent($event)" (removeEvent)="deleteEvent($event)" [event]="event"></app-cell-event> </li>
+            </mat-nav-list>
+          </ol>
+        </mat-list>
+      </div>
+      <div class="add-form">
+      <mat-form-field style="width: 440px; ">
+        <input
+          name="event"
+          matInput
+          placeholder="Add an event"
+          (keyup.enter)="addNewEvent($event)"
+          (keyup)="deleteWarning($event)"
+          [(ngModel)]="addTaskValue"
+        >
+      </mat-form-field>
+      <p *ngIf="invalid">Event can not be null</p>
+      <div>
+      </div>
+      </div>
+      <ng-content select="[body]"></ng-content>
+    </mat-card>
+</div>

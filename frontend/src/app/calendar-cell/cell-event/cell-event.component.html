@@ -1,0 +1,17 @@
+<span *ngIf="!modeEdit"> 
+  {{event.title}}
+  <button (click)="editEvent()"  class="control-button" mat-icon-button><i class="material-icons">mode_edit</i></button>
+  <button (click)="deleteEvent()" class="control-button" mat-icon-button>
+      <i class="material-icons">delete</i>
+  </button>  
+</span>
+<span *ngIf="modeEdit"> 
+    <mat-form-field style="width: 200px;">
+      <input (keyup.enter)="updateEvent()"  type="text" matInput [(ngModel)]="title" class="edit-input">
+    </mat-form-field>
+      <button (click)="updateEvent()"  class="control-button" mat-icon-button><i class="material-icons">done</i></button>
+      <button (click)="cancelEdit()" class="control-button" mat-icon-button><i class="material-icons">clear</i></button>
+</span>
+
+
+

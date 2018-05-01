@@ -1,0 +1,32 @@
+<div *ngIf="!loading">
+<div class="container">
+    <h2> Organize your events </h2>
+</div>
+
+<div class="container fxLayout divulet">
+    <div class="calendar-header">
+    <button mat-mini-fab (click)="previousMonth()"><i class="material-icons">keyboard_arrow_left</i></button>
+    <mat-card fxFlex='250px'> {{Calendar.monthName}} {{ Calendar.year }} </mat-card>
+    <button  mat-mini-fab (click)="nextMonth()"><i class="material-icons">keyboard_arrow_right</i></button>
+    </div>
+
+<div fxLayout fxHide.xs fxLayoutAlign="center" fxLayoutGap="10px">
+    <div class="header" fxFlex fxFlex="calc(100% * (1/7) - 10px - 1px)"> Monday </div>
+    <div class="header" fxFlex fxFlex="calc(100% * (1/7) - 10px - 1px)"> Tuesday </div>
+    <div class="header" fxFlex fxFlex="calc(100% * (1/7) - 10px - 1px)"> Wednesday </div>
+    <div class="header" fxFlex fxFlex="calc(100% * (1/7) - 10px - 1px)"> Thursday </div>
+    <div class="header" fxFlex fxFlex="calc(100% * (1/7) - 10px - 1px)"> Friday </div>
+    <div class="header" fxFlex fxFlex="calc(100% * (1/7) - 10px - 1px)"> Saturday </div>
+    <div class="header" fxFlex fxFlex="calc(100% * (1/7) - 10px - 1px)"> Sunday </div>
+</div>
+<br>
+
+<div [@slideInOut]="animationState" class="calendar-rows" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutWrap  fxLayoutGap.xs="5px">
+    <div *ngFor="let number of Calendar.firstWeekDay"  class="item" fxFlex="calc(100% * (1/7) - 10px - 1px)"></div>
+    <div *ngFor="let event of Calendar.DateEvents"  class="item" fxFlex="calc(100% * (1/7) - 10px - 1px)">
+        <app-calendar-cell (updatedEvent)="updatedEvent($event)" (newEvents)="addEvent($event)" (removeEvent)="removeEvent($event)"  [dateEvent]="event"></app-calendar-cell>
+    </div>
+    <div  *ngFor="let number of Calendar.lastWeekDay"  class="item" fxFlex="calc(100% * (1/7) - 10px - 1px)"></div>
+</div>
+</div>
+</div>

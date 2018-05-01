@@ -1,0 +1,48 @@
+<mat-toolbar class="main-toolbar"  color="primary">
+    <span><button mat-button (click)="sidenav.toggle()"><i class="material-icons">dehaze</i></button> Organizer</span>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="sidebar" >
+    <mat-sidenav #sidenav opened position="start" mode="side">
+        <mat-list class="menu-items" >
+            <mat-divider></mat-divider>
+            <mat-nav-list>
+               <a class="menu-item"
+                mat-button
+                routerLink=""
+                routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <i class="material-icons">home</i> Home
+                </a>
+            </mat-nav-list>
+            <mat-nav-list>
+                <a class="menu-item" mat-button routerLink="/calendar" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+                    <i class="material-icons">grid_on</i> Calendar
+                </a>
+            </mat-nav-list>
+            <mat-nav-list>
+                <a class="menu-item"
+                mat-button
+                routerLink="/about"
+                routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <i class="material-icons">info_outline</i> About
+                </a>
+            </mat-nav-list>
+            <mat-nav-list></mat-nav-list>
+            <mat-divider></mat-divider>
+        </mat-list>
+        <br>
+        <mat-card id="about-app-card" >Organazier 1.0</mat-card>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content>
+        <div class="container">
+            <router-outlet ></router-outlet>
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+

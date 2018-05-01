@@ -1,0 +1,26 @@
+{
+  "name": "organizer",
+  "version": "1.0.0",
+  "description": "just a simple organizer for teza de an",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.11.1",
+    "@types/mongoose": "^5.0.6",
+    "@types/node": "^9.4.6",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.12.0",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.1",
+    "typescript": "^2.7.2"
+  }
+}
